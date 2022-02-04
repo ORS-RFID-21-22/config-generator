@@ -2,21 +2,21 @@ from profile_dict import profile
 import sys
 
 # default
-start_frequency = 60            # GHz
-bandwidth = 3.5                 # GHz
-ramping_signal_slope = 70       # MHz/us
-adc_samples_per_chirp = 512     # 
+# start_frequency = 60            # GHz
+# bandwidth = 3.5                 # GHz
+# ramping_signal_slope = 70       # MHz/us
+# adc_samples_per_chirp = 512     # 
 
-sampling_rate = 12499           # ksps
+# sampling_rate = 12499           # ksps
 
 # ----------------------------------------------------------------------------
 # Inputs
 # ----------------------------------------------------------------------------
-# start_frequency = float(input('Start frequency (GHz): '))
-# ramp_end_time = float(input('Ramp end time (us): '))
-# ramping_signal_slope = float(input('Slope of ramping signal (MHz/us): '))
-# sampling_rate = int(input('Sampling rate (ksps): '))
-# adc_samples_per_chirp = int(input('ADC samples per chirp: '))
+start_frequency = float(input('Start frequency (GHz): '))
+bandwidth = float(input('Bandwidth (GHz): '))
+ramping_signal_slope = float(input('Slope of ramping signal (MHz/us): '))
+adc_samples_per_chirp = int(input('ADC samples per chirp: '))
+sampling_rate = int(input('Sampling rate (ksps): '))
 
 # ----------------------------------------------------------------------------
 # Validations and Calculations
@@ -92,3 +92,5 @@ with open('profile.cfg', 'w') as f:
         f.write('\n')
 
     f.write('\nsensorStart')
+
+print('\nConfig written to profile.cfg\n')
